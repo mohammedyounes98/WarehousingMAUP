@@ -25,7 +25,7 @@ translations = {
         "title": "The Modifiable Areal Unit Problem (MAUP) in Paris Region",
         "intro": """
         This application demonstrates the Modifiable Areal Unit Problem (MAUP) 
-        by analyzing the distribution of logistics warehouses in the Paris region 
+        by analyzing the distribution of virtual logistics warehouses in the Paris region 
         and their relationship with socioeconomic indicators.
 
         MAUP shows how different scales of spatial aggregation can influence the 
@@ -185,3 +185,20 @@ st.markdown("""
 - Gehlke, C.E. & Biehl, K. (1934). Certain effects of grouping upon the size of the correlation coefficient in census tract material.
 - Wong, D. (2009). The modifiable areal unit problem (MAUP). The SAGE handbook of spatial analysis, 105-123.
 """)
+
+
+
+## Adding the credit and the GitHub repo to the side bar
+st.sidebar.markdown("---")
+st.sidebar.markdown("""
+**Developed by:**  
+**Mohammed Younes**  
+[LVMT - Gustave Eiffel University](https://www.lvmt.fr/)
+""")
+
+github_url = "https://github.com/mohammedyounes98/WarehousingMAUP"
+st.sidebar.markdown(f"""
+<a href="{github_url}" target="_blank">
+    <img src="https://img.shields.io/badge/GitHub-Repo-black?style=for-the-badge&logo=github" width="180">
+</a>
+""", unsafe_allow_html=True)

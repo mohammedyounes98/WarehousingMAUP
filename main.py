@@ -1,7 +1,7 @@
 import streamlit as st
 import streamlit_folium
 from data_generator import generate_warehouse_data
-from utils import create_map, calculate_statistics
+from utils import create_map, calculate_statistics, create_grid
 
 # Page configuration
 st.set_page_config(
@@ -37,14 +37,14 @@ with col1:
     # Create and display map
     st.subheader("Interactive Map")
     m = create_map(data, grid_size)
-    streamlit_folium.folium_static(m)
+    streamlit_folium.st_folium(m, width=800)
 
 with col2:
     # Display statistics and explanation
     st.subheader("Grid Statistics")
     grid_counts, _, _ = create_grid(data, grid_size)
     stats = calculate_statistics(grid_counts)
-    
+
     for stat_name, value in stats.items():
         st.metric(stat_name, value)
 

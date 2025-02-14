@@ -5,7 +5,12 @@ from data_generator import (
     generate_socioeconomic_data,
     get_department_stats
 )
-from utils import create_choropleth_map, calculate_statistics, calculate_correlation_analysis
+from utils import (
+    create_choropleth_map,
+    calculate_statistics,
+    calculate_correlation_analysis,
+    create_grid
+)
 
 # Page configuration
 st.set_page_config(
@@ -100,10 +105,8 @@ with col2:
     st.subheader(t["stats_title"])
 
     # Calculate statistics
-    stats = calculate_statistics(
-        *create_grid(warehouses_df, grid_size),
-        stats_df
-    )
+    grid_data = create_grid(warehouses_df, grid_size)
+    stats = calculate_statistics(grid_data[0], grid_data[1], stats_df)
 
     # Display grid analysis
     st.subheader(t["grid_analysis"])

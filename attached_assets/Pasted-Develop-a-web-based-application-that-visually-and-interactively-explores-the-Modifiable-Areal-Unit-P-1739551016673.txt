@@ -1,0 +1,24 @@
+Develop a web-based application that visually and interactively explores the Modifiable Areal Unit Problem (MAUP) in the socioeconomic analysis of logistics facilities, specifically in the context of France. The application should allow users to:
+
+Upload or Select Spatial Data – Users can input warehouse locations and socioeconomic indicators (employment, income, transportation accessibility) at different aggregation levels (e.g., communes, departments, functional urban areas).
+
+Adjust Aggregation Parameters – Implement controls that allow users to modify spatial units dynamically (e.g., departmental boundaries vs. grid-based partitions), simulating the Scale Effect and Zoning Effect of MAUP.
+
+Compare Analytical Outcomes – Display side-by-side statistical comparisons (e.g., regression analysis, spatial autocorrelation metrics like Moran’s I, LISA) to demonstrate how different aggregation schemes affect logistics facility impact assessments.
+
+Incorporate Spatial Interaction Models – Provide an interactive spatial interaction model (e.g., gravity model, accessibility index) to examine how MAUP distorts warehouse placement and its socioeconomic influence.
+
+Visualization & Interpretation – Generate maps and charts to illustrate how spatial inconsistencies occur. Allow toggling between different levels of granularity to show distortions caused by MAUP.
+
+Scenario Testing & Sensitivity Analysis – Include a function where users can simulate different zoning approaches (e.g., administrative vs. functional regions) and test policy impacts on logistics site selection.
+
+Export & Report Features – Enable users to export their simulation results as reports for research and policy analysis."
+
+Technology Recommendations:
+
+Frontend: React.js or Vue.js for interactive UI.
+Backend: Python (Flask/Django) or Node.js for data processing.
+Mapping & GIS: Leaflet.js or Mapbox for dynamic geospatial visualization.
+Data Handling: PostgreSQL with PostGIS for spatial data management.
+Machine Learning (Optional): Integration of clustering algorithms to predict warehouse distribution under different zoning constraints.
+The goal is to demonstrate how different spatial aggregation methods impact logistics analysis and policymaking by leveraging interactive spatial tools. The app should be intuitive for researchers, policymakers, and urban planners to explore MAUP-related biases in logistics studies."

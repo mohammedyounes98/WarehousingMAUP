@@ -86,7 +86,7 @@ def create_choropleth_map(warehouses_df: pd.DataFrame,
 
     return m
 
-def calculate_statistics(grid_counts: np.ndarray, stats_df: pd.DataFrame) -> Dict:
+def calculate_statistics(grid_counts: np.ndarray, lat_edges: np.ndarray, stats_df: pd.DataFrame) -> Dict:
     """Calculate statistics for the current grid configuration and department data."""
     stats = {
         'Grid Analysis': {
@@ -94,7 +94,7 @@ def calculate_statistics(grid_counts: np.ndarray, stats_df: pd.DataFrame) -> Dic
             'Occupied Cells': np.count_nonzero(grid_counts),
             'Max Count per Cell': int(grid_counts.max()),
             'Mean Count (Occupied Cells)': round(grid_counts[grid_counts > 0].mean(), 2),
-            'Density Variation (CV)': round(np.std(grid_counts) / np.mean(grid_counts[grid_counts > 0]) * 100, 2)
+            'Density Variation (CV)': round(np.std(grid_counts) / np.mean(grid_counts[grid_counts > 0]) * 100, 2) if np.mean(grid_counts[grid_counts > 0]) > 0 else 0
         },
         'Department Analysis': {
             'Total Warehouses': int(stats_df['warehouse_count'].sum()),
